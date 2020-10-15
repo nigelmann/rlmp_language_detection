@@ -84,6 +84,7 @@ class LanguageDetection extends AbstractPlugin
         // Break out if language already selected, other than default
         $currentLanguage = parent::getCurrentSiteLanguage();
         if (!$this->conf['dontBreakIfLanguageIsAlreadySelected']
+            && is_null($currentLanguage) === false
             && $currentLanguage->getLanguageId() !== 0
         ) {
             if ($GLOBALS['TYPO3_DLOG']) {
